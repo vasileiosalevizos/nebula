@@ -1,0 +1,21 @@
+@nebula_api_HostAddress = http://localhost:5290
+
+GET {{nebula_api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+POST {{nebula_api_HostAddress}}/getforecast
+Accept: application/json
+
+{
+  "date": "2023-12-15",
+  "temperatureC": 20,
+  "summary": "Sunny",
+  "temperatureF": 67
+}
+
+###
+curl -X POST https://localhost:5001/getforecast \
+-H "Content-Type: application/json" \
+-d '{"Date":"2023-12-15", "TemperatureC": 20, "Summary":"Sunny"}'
+
